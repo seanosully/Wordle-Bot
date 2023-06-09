@@ -262,8 +262,8 @@ def solve_unknown(wordList):
     avoiding = set()
     forbidden = set()
     filler = False
-    inputx = ""
     while pattern != [2,2,2,2,2]:
+        inputx = ""
         count = count+1
         print("Num Guesses: " + str(count))
         print("GUESS:  " + guess + "   ANS:   ?")
@@ -278,22 +278,16 @@ def solve_unknown(wordList):
         locks = make_combos(pattern, guess)
         if not filler:
             perms1 = compute_perms(locks, pattern)
-            print("PERM: ")
-            print(perms1)
             perm = perms1
         else:
             perms2 = compute_perms(locks, pattern)
             perm = combine_perms(perms1, perms2, pattern)
-            print(perm)
         avoiding =  set()
         avoided_patterns(pattern, guess, avoiding)
         wordList = updateList1(wordList, avoiding)
         forbidden = add_forbidden_letters(guess, pattern, forbidden)
-        print(forbidden)
         wordList = updateList3(wordList, forbidden, perm)
         wordList, permToGuess = updateList2(wordList, perm, guess)
-        print(wordList)
-        print(permToGuess)
         perms1 = perm
         print(str(len(wordList)) + " possible words")
         if(len(wordList) == 0):
@@ -317,6 +311,7 @@ def main():
     global answers_file
     dictionary_file = sys.argv[1]
     answers_file = sys.argv[2]
+    
     print("Wordle Bot v1.1")
     print("This version solves wordle in an average of:")
     print("3.755 moves when the valid guess list is the full dictionary (12,972 words) and the valid solutions list is limited to valid wordle solutions (2,309 words).")
