@@ -1,7 +1,7 @@
-# Wordle-Bot v1.0
+# Wordle-Bot v1.1
  
  To run the program:
-  python3 wordleBot.py <path to dictionary file (All-Words.txt or Possible-Answers.txt)
+  python3 wordleBot.py <path to dictionary file (All-Words.txt or Possible-Answers.txt) > <path to valid solutions file (All-Words.txt or Possible-Answers.txt)>
 
 Current stats:
  When using the All-Words dictionary file which contains 12,903 words the bot will average ~4.9 guesses to find the solution
@@ -16,5 +16,4 @@ Current stats:
  There is also a mode where you can give the bot a word to solve
  The last mode is to run the bot against all the words in the dictionary file and have it output the average guesses needed.
  
- * Note: The bot is not optimal yet and often struggles with words that have similar structures such as ending in 'ater'.
-   I hope to update it soon to lower the average guesses taken.
+ * Note: The bot is not optimal yet
